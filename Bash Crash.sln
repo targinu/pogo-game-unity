@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{d1be6f82-08bd-eb58-9847-77740d8a8d3a}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{8f6d90c2-bf4b-8849-7de4-f0f1de2c5b88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,6 +12,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{d1be6f82-08bd-eb58-9847-77740d8a8d3a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{d1be6f82-08bd-eb58-9847-77740d8a8d3a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8f6d90c2-bf4b-8849-7de4-f0f1de2c5b88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8f6d90c2-bf4b-8849-7de4-f0f1de2c5b88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
