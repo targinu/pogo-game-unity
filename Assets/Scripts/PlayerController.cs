@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameManager gameManager; //referência ao GameManager para acesso à pontuação
+    private int paintedBlockCount = 0; //contagem de blocos pintados
+    private int pendingScore = 0; //pontuação pendente a ser concedida ao colidir com uma caixa
+    private bool canScore = false; //indica se o jogador pode marcar pontos
+    private GameManager gameManager; //referência ao GameManager para acessar a pontuação
 
     private AudioSource audioSource; //componente de áudio para reproduzir o som
 
     private Rigidbody rb; //componente Rigidbody do jogador
-    private Vector3 targetPosition; //a posição do próximo bloco que o jogador vai se mover
+    private Vector3 targetPosition; //posição do próximo bloco que o jogador vai se mover
     private bool isMoving = false; //indica se o jogador está se movendo
     private bool isJumping = false; //indica se o jogador está pulando
 
@@ -15,14 +18,14 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 5.0f; //força do pulo
 
     public AudioClip slimeJump; //som a ser reproduzido ao atingir o chão
-
+    public AudioClip breakingCrate; //som a ser reproduzido ao atingir uma caixa
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>(); //encontra uma instância do GameManager na cena e armazena a referência
+        gameManager = FindObjectOfType<GameManager>(); //encontra o GameManager na cena
         rb = GetComponent<Rigidbody>(); //obtém o componente Rigidbody do jogador
         targetPosition = transform.position; //inicializa a posição de destino como a posição atual do jogador
-        audioSource = GetComponent<AudioSource>(); // Obtém o componente AudioSource do jogador
+        audioSource = GetComponent<AudioSource>(); //obtém o componente AudioSource do jogador
     }
 
     private void Update()
@@ -91,6 +94,14 @@ public class PlayerController : MonoBehaviour
             {
                 //encerra o movimento
                 isMoving = false;
+
+                //se houver pontos pendentes e o jogador pode marcar pontos, adiciona-os ao GameManager e ao jogador
+                if (pendingScore > 0 && canScore)
+                {
+                    gameManager.AddScore(pendingScore);
+                    pendingScore = 0; //limpa os pontos pendentes
+                    canScore = false; //reinicia a capacidade de marcar pontos
+                }
             }
         }
     }
@@ -104,8 +115,12 @@ public class PlayerController : MonoBehaviour
             //verifica se o bloco já não foi pintado de vermelho
             if (blockRenderer.material.color != Color.red)
             {
-                //adiciona pontuação ao colidir com um bloco não pintado e muda sua cor para vermelho
-                gameManager.AddScore(10);
+                //acumula a contagem de blocos pintados
+                paintedBlockCount++;
+
+                //adiciona pontuação temporária (não imediatamente)
+                pendingScore++;
+
                 blockRenderer.material.color = Color.red;
 
                 //reproduz o som "slimeJump"
@@ -113,6 +128,25 @@ public class PlayerController : MonoBehaviour
                 {
                     audioSource.PlayOneShot(slimeJump);
                 }
+            }
+        }
+        else if (collision.gameObject.CompareTag("Box"))
+        {
+            canScore = true; //o jogador agora pode marcar pontos
+            paintedBlockCount = 0; //reinicia a contagem de blocos pintados
+
+            //reproduz o som "breakingCrate"
+            if (audioSource != null && breakingCrate != null)
+            {
+                audioSource.PlayOneShot(breakingCrate);
+            }
+
+            //limpa a área previamente pintada
+            GameObject[] paintedBlocks = GameObject.FindGameObjectsWithTag("Grid");
+            foreach (GameObject block in paintedBlocks)
+            {
+                Renderer blockRenderer = block.GetComponent<Renderer>();
+                blockRenderer.material.color = Color.white;
             }
         }
     }
