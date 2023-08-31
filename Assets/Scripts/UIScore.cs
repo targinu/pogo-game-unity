@@ -15,6 +15,6 @@ public class UIScore : MonoBehaviour
     private void Update()
     {
         //atualiza o texto da pontuação usando a referência ao TextMeshProUGUI e a pontuação do GameManager
-        scoreText.text = "Score: " + gameManager.score;
+        scoreText.text = "SCORE: " + gameManager.score;
     }
 }
