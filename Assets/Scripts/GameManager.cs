@@ -15,12 +15,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        /*
-            for (int i = 0; i < players.Count; i++)
-            {
+
+        for (int i = 0; i < players.Count; i++)
+        {
             players[i].playerObject.GetComponent<PlayerController>().playerIndex = i;
-            }
-        */
+        }
+
     }
 
     public void AddScore(int playerIndex, int amount)

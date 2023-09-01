@@ -186,7 +186,10 @@ public class PlayerController : MonoBehaviour
             foreach (GameObject block in paintedBlocks)
             {
                 Renderer blockRenderer = block.GetComponent<Renderer>();
-                blockRenderer.material.color = Color.white;
+                if (blockRenderer.material.color == playerRenderer.material.color)
+                {
+                    blockRenderer.material.color = Color.white;
+                }
             }
         }
     }
