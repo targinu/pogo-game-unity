@@ -14,8 +14,11 @@ public class BreakableBox : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player")) //verifica se colidiu com o jogador
         {
+            //obtem o playerIndex
+            int playerIndex = collision.gameObject.GetComponent<PlayerController>().playerIndex;
+
             //calcula os pontos com base na quantidade de blocos pintados
-            gameManager.AddScore(paintedBlockCount);
+            gameManager.AddScore(playerIndex, paintedBlockCount);
             Destroy(gameObject); //destroi a caixa
         }
     }

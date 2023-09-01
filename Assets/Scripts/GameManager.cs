@@ -1,11 +1,38 @@
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
-    public int score = 0; //a pontuação do jogo, inicializada como 0
+    public List<PlayerData> players = new List<PlayerData>(); // Lista de jogadores
 
-    public void AddScore(int amount)
+    [System.Serializable]
+    public class PlayerData
     {
-        score += amount; //adiciona a quantidade especificada à pontuação atual
+        public int score = 0;
+        public GameObject playerObject;
+    }
+
+    private void Start()
+    {
+        /*
+                for (int i = 0; i < players.Count; i++)
+                {
+                    players[i].playerObject.GetComponent<PlayerController>().playerIndex = i;
+                }
+        */
+    }
+
+    public void AddScore(int playerIndex, int amount)
+    {
+        if (playerIndex >= 0 && playerIndex < players.Count)
+        {
+            players[playerIndex].score += amount;
+            Debug.Log("Adding " + amount + " score for playerIndex: " + playerIndex);
+        }
+        else
+        {
+            Debug.LogError("Invalid playerIndex: " + playerIndex);
+        }
     }
 }

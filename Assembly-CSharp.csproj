@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-        <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -859,17 +859,20 @@
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
         <HintPath>C:\Users\targi\OneDrive\Área de Trabalho\TutorialUnity\Bash Crash\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+        <HintPath>C:\Users\targi\OneDrive\Área de Trabalho\TutorialUnity\Bash Crash\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
         <HintPath>C:\Users\targi\OneDrive\Área de Trabalho\TutorialUnity\Bash Crash\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
         <HintPath>C:\Users\targi\OneDrive\Área de Trabalho\TutorialUnity\Bash Crash\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-        <HintPath>C:\Users\targi\OneDrive\Área de Trabalho\TutorialUnity\Bash Crash\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
         <HintPath>C:\Users\targi\OneDrive\Área de Trabalho\TutorialUnity\Bash Crash\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+        <HintPath>C:\Users\targi\OneDrive\Área de Trabalho\TutorialUnity\Bash Crash\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
         <HintPath>C:\Users\targi\OneDrive\Área de Trabalho\TutorialUnity\Bash Crash\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
@@ -879,9 +882,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
         <HintPath>C:\Users\targi\OneDrive\Área de Trabalho\TutorialUnity\Bash Crash\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-        <HintPath>C:\Users\targi\OneDrive\Área de Trabalho\TutorialUnity\Bash Crash\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>C:\Users\targi\OneDrive\Área de Trabalho\TutorialUnity\Bash Crash\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
