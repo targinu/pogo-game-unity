@@ -4,9 +4,8 @@ using UnityEngine;
 public class UIScore : MonoBehaviour
 {
     public TextMeshProUGUI scoreText; //referência ao componente TextMeshProUGUI no Inspector
+    public int playerIndex; //índice do jogador associado a este UIScore
     private GameManager gameManager;  //referência ao GameManager para acessar a pontuação
-
-    private int playerIndex; //índice do jogador associado a este UIScore
 
     private void Start()
     {
@@ -15,13 +14,14 @@ public class UIScore : MonoBehaviour
 
     private void Update()
     {
-        if (playerIndex >= 0 && playerIndex < gameManager.players.Count) //verifique se o índice é válido
+        //verifica se o índice é válido
+        if (playerIndex >= 0 && playerIndex < gameManager.players.Count)
         {
             scoreText.text = "SCORE P" + (playerIndex + 1) + ": " + gameManager.players[playerIndex].score.ToString();
         }
     }
 
-
+    //função para definir o playerIndex a partir do Inspector
     public void SetPlayerIndex(int index)
     {
         playerIndex = index;

@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 130543241}
   - component: {fileID: 130543243}
   - component: {fileID: 130543242}
+  - component: {fileID: 130543244}
   m_Layer: 5
   m_Name: ScoreP3
   m_TagString: Untagged
@@ -362,6 +363,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130543240}
   m_CullTransparentMesh: 1
+--- !u!114 &130543244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130543240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2495debe2d5f2364ba6fb5f32ddb8186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 130543242}
+  playerIndex: 2
 --- !u!1 &176619172
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +826,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 195142283}
-  - component: {fileID: 195142284}
   m_Layer: 0
   m_Name: Score4
   m_TagString: Untagged
@@ -834,19 +848,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1186372201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &195142284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195142282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2495debe2d5f2364ba6fb5f32ddb8186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 2145664935}
 --- !u!1 &255763704
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1000,7 @@ GameObject:
   - component: {fileID: 328314409}
   - component: {fileID: 328314411}
   - component: {fileID: 328314410}
+  - component: {fileID: 328314412}
   m_Layer: 5
   m_Name: ScoreP2
   m_TagString: Untagged
@@ -1122,6 +1124,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328314408}
   m_CullTransparentMesh: 1
+--- !u!114 &328314412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328314408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2495debe2d5f2364ba6fb5f32ddb8186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 328314410}
+  playerIndex: 1
 --- !u!1 &374358602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1147,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 374358603}
-  - component: {fileID: 374358604}
   m_Layer: 0
   m_Name: Score2
   m_TagString: Untagged
@@ -1154,19 +1169,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327871770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &374358604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374358602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2495debe2d5f2364ba6fb5f32ddb8186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 328314410}
 --- !u!1 &682557857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,6 +1630,7 @@ GameObject:
   - component: {fileID: 914601198}
   - component: {fileID: 914601200}
   - component: {fileID: 914601199}
+  - component: {fileID: 914601201}
   m_Layer: 5
   m_Name: ScoreP1
   m_TagString: Untagged
@@ -1751,6 +1754,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914601197}
   m_CullTransparentMesh: 1
+--- !u!114 &914601201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914601197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2495debe2d5f2364ba6fb5f32ddb8186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 914601199}
+  playerIndex: 0
 --- !u!1 &965629589
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,7 +2632,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1978774853}
-  - component: {fileID: 1978774854}
   m_Layer: 0
   m_Name: Score3
   m_TagString: Untagged
@@ -2638,19 +2654,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 176619173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1978774854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978774852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2495debe2d5f2364ba6fb5f32ddb8186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 130543242}
 --- !u!1 &1991527215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2814,7 +2817,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2044164072}
-  - component: {fileID: 2044164073}
   m_Layer: 0
   m_Name: Score1
   m_TagString: Untagged
@@ -2837,19 +2839,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 776787358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2044164073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044164071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2495debe2d5f2364ba6fb5f32ddb8186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 914601199}
 --- !u!1 &2054362884
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,6 +3003,7 @@ GameObject:
   - component: {fileID: 2145664934}
   - component: {fileID: 2145664936}
   - component: {fileID: 2145664935}
+  - component: {fileID: 2145664937}
   m_Layer: 5
   m_Name: ScoreP4
   m_TagString: Untagged
@@ -3137,6 +3127,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145664933}
   m_CullTransparentMesh: 1
+--- !u!114 &2145664937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145664933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2495debe2d5f2364ba6fb5f32ddb8186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 2145664935}
+  playerIndex: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
