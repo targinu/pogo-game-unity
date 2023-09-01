@@ -45,10 +45,10 @@ public class PlayerController : MonoBehaviour
 
         Vector3[] startingPositions = new Vector3[]
         {
-        new Vector3(-3.5f, 0.8f, -3.5f), //jogador 1
-        new Vector3(-3.5f, 0.8f, 3.5f),  //jogador 2
-        new Vector3(3.5f, 0.8f, -3.5f),  //jogador 3
-        new Vector3(3.5f, 0.8f, 3.5f)   //jogador 4
+            new Vector3(-3.5f, 0.8f, -3.5f), //jogador 1
+            new Vector3(-3.5f, 0.8f, 3.5f),  //jogador 2
+            new Vector3(3.5f, 0.8f, -3.5f),  //jogador 3
+            new Vector3(3.5f, 0.8f, 3.5f)   //jogador 4
         };
 
         transform.position = startingPositions[playerIndex];
@@ -96,13 +96,28 @@ public class PlayerController : MonoBehaviour
     private bool CanMoveTo(Vector3 position)
     {
         //verifica se a próxima posição está dentro dos limites do grid
-        float gridSize = 8.0f; // Tamanho do grid
+        float gridSize = 8.0f; //tamanho do grid
         float halfGridSize = gridSize / 2.0f;
 
         //verifica se a posição está dentro dos limites do grid e retorna true se estiver
         bool isInsideGrid = Mathf.Abs(position.x) <= halfGridSize && Mathf.Abs(position.z) <= halfGridSize;
 
-        return isInsideGrid;
+        if (!isInsideGrid)
+        {
+            return false; //posição fora do grid
+        }
+
+        //verifica se o bloco que o jogador vai pular possui outro jogador pela tag "Player"
+        Collider[] colliders = Physics.OverlapSphere(position, 0.2f);
+        foreach (var collider in colliders)
+        {
+            if (collider.CompareTag("Player"))
+            {
+                return false; //não pode pular para um bloco com outro jogador
+            }
+        }
+
+        return true; //pode mover-se para a posição
     }
 
     private void FixedUpdate()
