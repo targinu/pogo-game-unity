@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             PlayerIndex = playerIndex; //define o valor da propriedade PlayerIndex
             uiScore.SetPlayerIndex(PlayerIndex); //passe PlayerIndex para UIScore
+
         }
 
         Vector3[] startingPositions = new Vector3[]

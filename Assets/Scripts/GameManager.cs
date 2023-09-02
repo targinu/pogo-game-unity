@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
         if (playerIndex >= 0 && playerIndex < players.Count)
         {
             players[playerIndex].score += amount;
-            Debug.Log("Adding " + amount + " score for playerIndex: " + playerIndex);
         }
         else
         {
