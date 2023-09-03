@@ -48,8 +48,8 @@ public class PlayerController : MonoBehaviour
         {
             new Vector3(-3.5f, 0.8f, -3.5f), //jogador 1
             new Vector3(-3.5f, 0.8f, 3.5f),  //jogador 2
-            new Vector3(3.5f, 0.8f, -3.5f),  //jogador 3
-            new Vector3(3.5f, 0.8f, 3.5f)   //jogador 4
+            new Vector3(3.5f, 0.8f, 3.5f),  //jogador 3
+            new Vector3(3.5f, 0.8f, -3.5f)   //jogador 4
         };
 
         transform.position = startingPositions[playerIndex];

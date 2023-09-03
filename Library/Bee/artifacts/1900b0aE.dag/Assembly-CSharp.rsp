@@ -397,6 +397,7 @@
 "Assets/Scripts/BreakableBoxSpawner.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/GridGenerator.cs"
+"Assets/Scripts/PauseMenu.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/UIScore.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
