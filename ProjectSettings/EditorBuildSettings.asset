@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: a2c96d2257851014d896004b6bf41dee
+  - enabled: 1
+    path: Assets/Scenes/Pogo.unity
+    guid: 2c3d1e2a038c9fd45ba2ff2e0c40213d
   m_configObjects: {}
