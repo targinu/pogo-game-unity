@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject settingsMenuUI; //referência ao painel de configuração no Unity
     public GameObject soundMenuUI; //referência ao painel de menu de som no Unity
 
+    public GameObject controlsMenuUI; //referência ao painel de menu de controles no Unity
+
     private bool isPaused = false; //variável para rastrear se o jogo está pausado ou não
 
     void Update()
@@ -78,9 +80,16 @@ public class PauseMenu : MonoBehaviour
         settingsMenuUI.SetActive(false); //desativa o painel de configurações no Unity
     }
 
+    public void OpenControlsMenu()
+    {
+        controlsMenuUI.SetActive(true); //ativa o painel de controles no Unity
+        settingsMenuUI.SetActive(false); //desativa o painel de configurações no Unity
+    }
+
     public void BackToSettingsMenu()
     {
         soundMenuUI.SetActive(false); //desativa o painel de som no Unity
+        controlsMenuUI.SetActive(false); //desativa o painel de controles no Unity
         pauseMenuUI.SetActive(false); //desativa o painel de pausa no Unity
         settingsMenuUI.SetActive(true); //ativa o painel de configurações no Unity
     }
