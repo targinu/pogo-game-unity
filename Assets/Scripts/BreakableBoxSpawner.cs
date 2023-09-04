@@ -12,6 +12,9 @@ public class BreakableBoxSpawner : MonoBehaviour
     private GameObject[] currentBoxes; //array para armazenar as caixas atuais no jogo
     private GameObject[] players; //array para armazenar referências aos jogadores
 
+    public AudioSource sfxAudioSource; //referência ao AudioSource para o efeito sonoro
+    public AudioClip boxSpawnSFX; //o efeito sonoro a ser reproduzido ao spawnar uma caixa
+
     private void Start()
     {
         currentBoxes = new GameObject[maxConcurrentBoxes]; //inicializa o array de caixas
@@ -40,6 +43,9 @@ public class BreakableBoxSpawner : MonoBehaviour
         {
             currentBoxes[boxIndex] = Instantiate(breakableBoxPrefab, spawnPosition, Quaternion.identity); //instancia a caixa na posição encontrada
             Destroy(currentBoxes[boxIndex], boxLifetime); //destroi a caixa após o tempo de vida definido
+
+            //toca o efeito sonoro de spawn da caixa
+            sfxAudioSource.PlayOneShot(boxSpawnSFX);
         }
     }
 

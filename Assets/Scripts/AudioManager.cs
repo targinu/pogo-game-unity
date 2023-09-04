@@ -14,14 +14,21 @@ public class AudioManager : MonoBehaviour
     {
         //obtém as referências dos AudioSources
         musicAudioSource = GameObject.Find("SoundManager").GetComponent<AudioSource>();
-        sfxAudioSources = GameObject.Find("Players").GetComponentsInChildren<AudioSource>();
+
+        AudioSource[] playerAudioSources = GameObject.Find("Players").GetComponentsInChildren<AudioSource>();
+        AudioSource[] boxSpawnerAudioSources = GameObject.Find("BoxSpawner").GetComponentsInChildren<AudioSource>();
+
+        //combina os arrays de AudioSources dos "Players" e do "BoxSpawner"
+        sfxAudioSources = new AudioSource[playerAudioSources.Length + boxSpawnerAudioSources.Length];
+        playerAudioSources.CopyTo(sfxAudioSources, 0);
+        boxSpawnerAudioSources.CopyTo(sfxAudioSources, playerAudioSources.Length);
 
         //obtém o volume inicial da música
         initialMusicVolume = musicAudioSource.volume;
 
         //define os valores iniciais dos sliders
         musicSlider.value = initialMusicVolume;
-        sfxSlider.value = sfxAudioSources[0].volume; //assumindo que o primeiro AudioSource é o que você deseja controlar com o slider.
+        sfxSlider.value = sfxAudioSources[0].volume;
 
         //define os métodos de callback dos sliders
         musicSlider.onValueChanged.AddListener(ChangeMusicVolume);
