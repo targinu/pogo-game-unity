@@ -72,18 +72,21 @@ public class KeybindManager : MonoBehaviour
         {
             TextMeshProUGUI buttonLabel = GetButtonLabel(buttonName);
 
-            //verifica se o rótulo do botão está aguardando uma nova entrada de tecla
+            // Verifica se o rótulo do botão está aguardando uma nova entrada de tecla
             if (buttonLabel.text == "Awaiting Input")
             {
                 foreach (KeyCode keycode in Enum.GetValues(typeof(KeyCode)))
                 {
                     if (Input.GetKey(keycode))
                     {
-                        //configura a tecla pressionada como a nova tecla para o botão
+                        // Configura a tecla pressionada como a nova tecla para o botão
                         buttonLabel.text = keycode.ToString();
 
-                        //salva a nova tecla nas preferências do jogador
+                        // Salva a nova tecla nas preferências do jogador
                         SaveKeybind(buttonName, keycode.ToString());
+
+                        // Atualiza as configurações de teclas com base na nova entrada de tecla
+                        UpdateKeyBindingsFromLabels();
                     }
                 }
             }
@@ -197,6 +200,23 @@ public class KeybindManager : MonoBehaviour
             moveRightLabel.text = PlayerKeyBindings[i].MoveRightKey.ToString();
             moveUpLabel.text = PlayerKeyBindings[i].MoveUpKey.ToString();
             moveDownLabel.text = PlayerKeyBindings[i].MoveDownKey.ToString();
+        }
+    }
+
+    //função para atualizar as configurações de teclas com base nas labels de texto
+    private void UpdateKeyBindingsFromLabels()
+    {
+        for (int i = 0; i < PlayerKeyBindings.Count; i++)
+        {
+            TextMeshProUGUI moveLeftLabel = GetButtonLabel("MoveLeftP" + (i + 1) + "Button");
+            TextMeshProUGUI moveRightLabel = GetButtonLabel("MoveRightP" + (i + 1) + "Button");
+            TextMeshProUGUI moveUpLabel = GetButtonLabel("MoveUpP" + (i + 1) + "Button");
+            TextMeshProUGUI moveDownLabel = GetButtonLabel("MoveDownP" + (i + 1) + "Button");
+
+            PlayerKeyBindings[i].MoveLeftKey = (KeyCode)Enum.Parse(typeof(KeyCode), moveLeftLabel.text);
+            PlayerKeyBindings[i].MoveRightKey = (KeyCode)Enum.Parse(typeof(KeyCode), moveRightLabel.text);
+            PlayerKeyBindings[i].MoveUpKey = (KeyCode)Enum.Parse(typeof(KeyCode), moveUpLabel.text);
+            PlayerKeyBindings[i].MoveDownKey = (KeyCode)Enum.Parse(typeof(KeyCode), moveDownLabel.text);
         }
     }
 }
