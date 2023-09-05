@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 5812965}
   - component: {fileID: 5812964}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveLeftP2Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -809,7 +809,7 @@ GameObject:
   - component: {fileID: 133644481}
   - component: {fileID: 133644480}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveLeftP4Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -943,7 +943,7 @@ GameObject:
   - component: {fileID: 142371083}
   - component: {fileID: 142371082}
   m_Layer: 5
-  m_Name: MoveUpP4Label
+  m_Name: MoveUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1588,7 +1588,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 186189526}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1869529830}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &186189526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2410,7 +2422,7 @@ GameObject:
   - component: {fileID: 286297973}
   - component: {fileID: 286297972}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: 'MoveDownP2Label '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2544,7 +2556,7 @@ GameObject:
   - component: {fileID: 324024289}
   - component: {fileID: 324024288}
   m_Layer: 5
-  m_Name: 'MoveRightP2Label '
+  m_Name: MoveRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2957,7 +2969,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 387621070}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1112054337}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &387621070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2996,6 +3020,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387621067}
   m_CullTransparentMesh: 1
+--- !u!1 &399167992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399167994}
+  - component: {fileID: 399167995}
+  m_Layer: 0
+  m_Name: KeybindManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &399167994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399167992}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.18252328, y: 0.6922095, z: -3.384517}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399167995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399167992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbb622dfe172f840b3bf137d11f5ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveLeftP1lbl: {fileID: 618811156}
+  moveRightP1lbl: {fileID: 1869529830}
+  moveUpP1lbl: {fileID: 2039176739}
+  moveDownP1lbl: {fileID: 1556840196}
+  moveLeftP2lbl: {fileID: 5812964}
+  moveRightP2lbl: {fileID: 1965732508}
+  moveUpP2lbl: {fileID: 1100853271}
+  moveDownP2lbl: {fileID: 286297972}
+  moveLeftP3lbl: {fileID: 1591616992}
+  moveRightP3lbl: {fileID: 1112054337}
+  moveUpP3lbl: {fileID: 783246618}
+  moveDownP3lbl: {fileID: 957692164}
+  moveLeftP4lbl: {fileID: 133644480}
+  moveRightP4lbl: {fileID: 1565491597}
+  moveUpP4lbl: {fileID: 1920952925}
+  moveDownP4lbl: {fileID: 1213742804}
+  PlayerKeyBindings:
+  - MoveLeftKey: 97
+    MoveRightKey: 100
+    MoveUpKey: 119
+    MoveDownKey: 115
+  - MoveLeftKey: 276
+    MoveRightKey: 275
+    MoveUpKey: 273
+    MoveDownKey: 274
+  - MoveLeftKey: 106
+    MoveRightKey: 108
+    MoveUpKey: 105
+    MoveDownKey: 107
+  - MoveLeftKey: 260
+    MoveRightKey: 262
+    MoveUpKey: 264
+    MoveDownKey: 258
 --- !u!1 &417780923
 GameObject:
   m_ObjectHideFlags: 0
@@ -3083,7 +3184,7 @@ GameObject:
   - component: {fileID: 438250102}
   - component: {fileID: 438250101}
   m_Layer: 5
-  m_Name: MoveLeftP3Label
+  m_Name: MoveLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3430,7 +3531,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 444409169}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1213742804}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &444409169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4239,7 +4352,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 549875220}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5812964}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &549875220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4290,7 +4415,7 @@ GameObject:
   - component: {fileID: 568235782}
   - component: {fileID: 568235781}
   m_Layer: 5
-  m_Name: 'MoveDownP4Label '
+  m_Name: MoveDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4460,7 +4585,7 @@ GameObject:
   - component: {fileID: 613421333}
   - component: {fileID: 613421332}
   m_Layer: 5
-  m_Name: MoveLeftP2Label
+  m_Name: MoveLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4594,7 +4719,7 @@ GameObject:
   - component: {fileID: 618811157}
   - component: {fileID: 618811156}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveLeftP1Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4931,7 +5056,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 647350805}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 133644480}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &647350805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5161,7 +5298,7 @@ GameObject:
   - component: {fileID: 710694473}
   - component: {fileID: 710694472}
   m_Layer: 5
-  m_Name: MoveLeftP4Label
+  m_Name: MoveLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5295,7 +5432,7 @@ GameObject:
   - component: {fileID: 730412575}
   - component: {fileID: 730412574}
   m_Layer: 5
-  m_Name: MoveUpP1Label
+  m_Name: MoveUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6055,7 +6192,7 @@ GameObject:
   - component: {fileID: 783246619}
   - component: {fileID: 783246618}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveUpP3Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6259,7 +6396,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 836284779}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 957692164}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &836284779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6854,7 +7003,7 @@ GameObject:
   - component: {fileID: 957692165}
   - component: {fileID: 957692164}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveDownP3Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7375,7 +7524,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1023590539}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 618811156}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1023590539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7472,7 +7633,7 @@ GameObject:
   - component: {fileID: 1039487869}
   - component: {fileID: 1039487868}
   m_Layer: 5
-  m_Name: MoveRightP3Label
+  m_Name: MoveRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7676,7 +7837,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1046643945}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 783246618}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1046643945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7936,7 +8109,7 @@ GameObject:
   - component: {fileID: 1100853272}
   - component: {fileID: 1100853271}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveUpP2Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8203,7 +8376,7 @@ GameObject:
   - component: {fileID: 1112054338}
   - component: {fileID: 1112054337}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveRightP3Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8776,7 +8949,7 @@ GameObject:
   - component: {fileID: 1213742805}
   - component: {fileID: 1213742804}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: 'MoveDownP4Label '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9044,7 +9217,7 @@ GameObject:
   - component: {fileID: 1246048694}
   - component: {fileID: 1246048693}
   m_Layer: 5
-  m_Name: MoveUpP3Label
+  m_Name: MoveUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10144,7 +10317,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1346759779}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1556840196}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1346759779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10435,7 +10620,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1399107598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2039176739}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1399107598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10556,7 +10753,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1415826510}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1100853271}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1415826510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10677,7 +10886,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1416304078}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1565491597}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1416304078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10728,7 +10949,7 @@ GameObject:
   - component: {fileID: 1422980621}
   - component: {fileID: 1422980620}
   m_Layer: 5
-  m_Name: MoveDownP1Label
+  m_Name: MoveDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11066,7 +11287,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1482566947}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 286297972}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1482566947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11187,7 +11420,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1489098075}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1591616992}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1489098075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11308,7 +11553,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1503377717}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1965732508}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1503377717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11492,7 +11749,7 @@ GameObject:
   - component: {fileID: 1556840197}
   - component: {fileID: 1556840196}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveDownP1Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11626,7 +11883,7 @@ GameObject:
   - component: {fileID: 1565491598}
   - component: {fileID: 1565491597}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: 'MoveRightP4Label '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11760,7 +12017,7 @@ GameObject:
   - component: {fileID: 1591616993}
   - component: {fileID: 1591616992}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveLeftP3Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12236,7 +12493,7 @@ GameObject:
   - component: {fileID: 1688898468}
   - component: {fileID: 1688898467}
   m_Layer: 5
-  m_Name: MoveRightP1Label
+  m_Name: MoveRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12370,7 +12627,7 @@ GameObject:
   - component: {fileID: 1701688900}
   - component: {fileID: 1701688899}
   m_Layer: 5
-  m_Name: 'MoveDownP2Label '
+  m_Name: MoveDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12729,7 +12986,7 @@ GameObject:
   - component: {fileID: 1814581277}
   - component: {fileID: 1814581276}
   m_Layer: 5
-  m_Name: 'MoveRightP4Label '
+  m_Name: MoveRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13028,7 +13285,7 @@ GameObject:
   - component: {fileID: 1869529831}
   - component: {fileID: 1869529830}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveRightP1Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13296,7 +13553,7 @@ GameObject:
   - component: {fileID: 1920952926}
   - component: {fileID: 1920952925}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveUpP4Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13498,7 +13755,7 @@ GameObject:
   - component: {fileID: 1965732509}
   - component: {fileID: 1965732508}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: 'MoveRightP2Label '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13783,7 +14040,7 @@ GameObject:
   - component: {fileID: 2038312822}
   - component: {fileID: 2038312821}
   m_Layer: 5
-  m_Name: MoveDownP3Label
+  m_Name: MoveDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13917,7 +14174,7 @@ GameObject:
   - component: {fileID: 2039176740}
   - component: {fileID: 2039176739}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveUpP1Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14274,7 +14531,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2077783147}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399167995}
+        m_TargetAssemblyTypeName: KeybindManager, Assembly-CSharp
+        m_MethodName: ChangeKey
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1920952925}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2077783147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14325,7 +14594,7 @@ GameObject:
   - component: {fileID: 2105396429}
   - component: {fileID: 2105396428}
   m_Layer: 5
-  m_Name: MoveUpP2Label
+  m_Name: MoveUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14459,7 +14728,7 @@ GameObject:
   - component: {fileID: 2121168488}
   - component: {fileID: 2121168487}
   m_Layer: 5
-  m_Name: MoveLeftP1Label
+  m_Name: MoveLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14759,6 +15028,7 @@ SceneRoots:
   - {fileID: 192976584}
   - {fileID: 701038425}
   - {fileID: 440365825}
+  - {fileID: 399167994}
   - {fileID: 2033885246}
   - {fileID: 1927324617}
   - {fileID: 62338182}

@@ -23,6 +23,11 @@ public class PauseMenu : MonoBehaviour
                 //se o menu de som estiver ativo, volte para o menu de pausa
                 BackToPauseMenu();
             }
+            else if (controlsMenuUI.activeSelf)
+            {
+                //se o menu de configurações de controle estiver ativo, volte para o menu de pausa
+                BackToPauseMenu();
+            }
             else if (settingsMenuUI.activeSelf)
             {
                 //se o menu de configurações estiver ativo, volte para o menu de pausa
@@ -71,6 +76,7 @@ public class PauseMenu : MonoBehaviour
     {
         settingsMenuUI.SetActive(false); //desativa o painel de configurações no Unity
         soundMenuUI.SetActive(false); //desativa o painel de som no Unity
+        controlsMenuUI.SetActive(false); //desativa o painel de controles no Unity
         pauseMenuUI.SetActive(true); //ativa o painel de pausa no Unity
     }
 

@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     public int playerIndex = 0; //atributo para identificar o jogador
     public int PlayerIndex { get; private set; } //propriedade para acessar o índice do jogador
+    private KeybindManager keybindManager; //referência ao KeybindManager
 
     private void Start()
     {
@@ -34,6 +35,9 @@ public class PlayerController : MonoBehaviour
 
         //obtém o Renderer do jogador
         playerRenderer = GetComponent<Renderer>();
+
+        //obtém o KeybindManager na cena
+        keybindManager = FindObjectOfType<KeybindManager>();
 
         //cria uma referência ao UIScore associado a este jogador
         UIScore uiScore = GetComponent<UIScore>();
@@ -59,17 +63,32 @@ public class PlayerController : MonoBehaviour
     {
         if (!isMoving)
         {
-            float horizontalInput = Input.GetAxis("Horizontal"); //entrada horizontal do jogador
-            float verticalInput = Input.GetAxis("Vertical"); //entrada vertical do jogador
+            //use as teclas configuradas pelo KeybindManager para mover o jogador
+            float horizontalInput = 0;
+            float verticalInput = 0;
 
-            //verifica a entrada do jogador para mover-se na horizontal ou vertical
-            if (horizontalInput != 0 && verticalInput == 0)
+            if (playerIndex >= 0 && playerIndex < keybindManager.PlayerKeyBindings.Count)
             {
-                Move(Vector3.right * Mathf.Sign(horizontalInput)); //move para a direita ou esquerda
+                horizontalInput = Input.GetKey(keybindManager.PlayerKeyBindings[playerIndex].MoveRightKey)
+                    ? 1
+                    : (Input.GetKey(keybindManager.PlayerKeyBindings[playerIndex].MoveLeftKey) ? -1 : 0);
+
+                verticalInput = Input.GetKey(keybindManager.PlayerKeyBindings[playerIndex].MoveUpKey)
+                    ? 1
+                    : (Input.GetKey(keybindManager.PlayerKeyBindings[playerIndex].MoveDownKey) ? -1 : 0);
             }
-            else if (horizontalInput == 0 && verticalInput != 0)
+
+            //resto do código para movimentação
+            if (!isMoving)
             {
-                Move(Vector3.forward * Mathf.Sign(verticalInput)); //move para frente ou trás
+                if (horizontalInput != 0 && verticalInput == 0)
+                {
+                    Move(Vector3.right * Mathf.Sign(horizontalInput)); //move para a direita ou esquerda
+                }
+                else if (horizontalInput == 0 && verticalInput != 0)
+                {
+                    Move(Vector3.forward * Mathf.Sign(verticalInput)); //move para frente ou trás
+                }
             }
         }
 

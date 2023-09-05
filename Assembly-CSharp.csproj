@@ -13,7 +13,6 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFramework>net7.0</TargetFramework>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -64,6 +63,7 @@
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionCurves.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+     <Compile Include="Assets\Scripts\KeybindManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\ImageEffectBase.cs" />

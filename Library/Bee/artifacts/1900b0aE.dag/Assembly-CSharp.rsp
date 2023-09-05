@@ -399,6 +399,7 @@
 "Assets/Scripts/BreakableBoxSpawner.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/GridGenerator.cs"
+"Assets/Scripts/KeybindManager.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/PauseMenu.cs"
 "Assets/Scripts/PlayerController.cs"
