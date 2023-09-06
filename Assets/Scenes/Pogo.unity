@@ -3081,22 +3081,22 @@ MonoBehaviour:
   moveUpP4lbl: {fileID: 1920952925}
   moveDownP4lbl: {fileID: 1213742804}
   PlayerKeyBindings:
-  - MoveLeftKey: 97
-    MoveRightKey: 100
-    MoveUpKey: 119
-    MoveDownKey: 115
-  - MoveLeftKey: 276
-    MoveRightKey: 275
-    MoveUpKey: 273
-    MoveDownKey: 274
-  - MoveLeftKey: 106
-    MoveRightKey: 108
-    MoveUpKey: 105
-    MoveDownKey: 107
-  - MoveLeftKey: 260
-    MoveRightKey: 262
-    MoveUpKey: 264
-    MoveDownKey: 258
+  - MoveLeftKey: 0
+    MoveRightKey: 0
+    MoveUpKey: 0
+    MoveDownKey: 0
+  - MoveLeftKey: 0
+    MoveRightKey: 0
+    MoveUpKey: 0
+    MoveDownKey: 0
+  - MoveLeftKey: 0
+    MoveRightKey: 0
+    MoveUpKey: 0
+    MoveDownKey: 0
+  - MoveLeftKey: 0
+    MoveRightKey: 0
+    MoveUpKey: 0
+    MoveDownKey: 0
 --- !u!1 &417780923
 GameObject:
   m_ObjectHideFlags: 0

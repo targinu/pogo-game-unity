@@ -159,19 +159,6 @@ public class KeybindManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    //método para salvar as configurações de teclas
-    public void SaveKeyBindings()
-    {
-        for (int i = 0; i < PlayerKeyBindings.Count; i++)
-        {
-            string key = "Player" + (i + 1) + "KeyBindings";
-            string serializedBindings = JsonUtility.ToJson(PlayerKeyBindings[i]);
-            PlayerPrefs.SetString(key, serializedBindings);
-        }
-
-        PlayerPrefs.Save();
-    }
-
     //método para carregar as configurações de teclas
     public void LoadKeyBindings()
     {
@@ -218,5 +205,21 @@ public class KeybindManager : MonoBehaviour
             PlayerKeyBindings[i].MoveUpKey = (KeyCode)Enum.Parse(typeof(KeyCode), moveUpLabel.text);
             PlayerKeyBindings[i].MoveDownKey = (KeyCode)Enum.Parse(typeof(KeyCode), moveDownLabel.text);
         }
+
+        // Salve todas as configurações de teclas atualizadas
+        SaveAllKeyBindings();
     }
+
+    private void SaveAllKeyBindings()
+    {
+        for (int i = 0; i < PlayerKeyBindings.Count; i++)
+        {
+            string key = "Player" + (i + 1) + "KeyBindings";
+            string serializedBindings = JsonUtility.ToJson(PlayerKeyBindings[i]);
+            PlayerPrefs.SetString(key, serializedBindings);
+        }
+
+        PlayerPrefs.Save();
+    }
+
 }
