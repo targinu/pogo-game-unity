@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private int paintedBlockCount = 0; //contagem de blocos pintados
     private int pendingScore = 0; //pontuação pendente a ser concedida ao colidir com uma caixa
     private bool canScore = false; //indica se o jogador pode marcar pontos
     private GameManager gameManager; //referência ao GameManager para acessar a pontuação
@@ -179,8 +178,6 @@ public class PlayerController : MonoBehaviour
             //verifica se o bloco já não foi pintado da cor do jogador
             if (blockRenderer.material.color != playerMaterial.color)
             {
-                paintedBlockCount++;
-                pendingScore++;
                 blockRenderer.material.color = playerMaterial.color;
 
                 //reproduz o som "slimeJump"
@@ -193,7 +190,6 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Box"))
         {
             canScore = true; //o jogador agora pode marcar pontos
-            paintedBlockCount = 0; //reinicia a contagem de blocos pintados
 
             //reproduz o som "breakingCrate"
             if (audioSource != null && breakingCrate != null)
@@ -212,5 +208,10 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public Color GetPlayerColor()
+    {
+        return playerRenderer.material.color;
     }
 }

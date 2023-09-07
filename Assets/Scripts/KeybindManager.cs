@@ -72,20 +72,20 @@ public class KeybindManager : MonoBehaviour
         {
             TextMeshProUGUI buttonLabel = GetButtonLabel(buttonName);
 
-            // Verifica se o rótulo do botão está aguardando uma nova entrada de tecla
+            //verifica se o rótulo do botão está aguardando uma nova entrada de tecla
             if (buttonLabel.text == "Awaiting Input")
             {
                 foreach (KeyCode keycode in Enum.GetValues(typeof(KeyCode)))
                 {
                     if (Input.GetKey(keycode))
                     {
-                        // Configura a tecla pressionada como a nova tecla para o botão
+                        //configura a tecla pressionada como a nova tecla para o botão
                         buttonLabel.text = keycode.ToString();
 
-                        // Salva a nova tecla nas preferências do jogador
+                        //salva a nova tecla nas preferências do jogador
                         SaveKeybind(buttonName, keycode.ToString());
 
-                        // Atualiza as configurações de teclas com base na nova entrada de tecla
+                        //atualiza as configurações de teclas com base na nova entrada de tecla
                         UpdateKeyBindingsFromLabels();
                     }
                 }
@@ -93,9 +93,9 @@ public class KeybindManager : MonoBehaviour
         }
     }
 
+    //função chamada quando um jogador deseja reconfigurar uma tecla, redefine o rótulo do botão para "Awaiting Input"
     public void ChangeKey(TextMeshProUGUI buttonLabel)
     {
-        //chamado quando um jogador deseja reconfigurar uma tecla, redefine o rótulo do botão para "Awaiting Input"
         buttonLabel.text = "Awaiting Input";
     }
 
@@ -174,6 +174,7 @@ public class KeybindManager : MonoBehaviour
         }
     }
 
+    //atualiza os rótulos de TextMeshProUGUI com os valores das configurações de teclas
     private void UpdateTextMeshProValues()
     {
         for (int i = 0; i < PlayerKeyBindings.Count; i++)
@@ -206,10 +207,10 @@ public class KeybindManager : MonoBehaviour
             PlayerKeyBindings[i].MoveDownKey = (KeyCode)Enum.Parse(typeof(KeyCode), moveDownLabel.text);
         }
 
-        // Salve todas as configurações de teclas atualizadas
         SaveAllKeyBindings();
     }
 
+    //salva todas as configurações de teclas atualizadas
     private void SaveAllKeyBindings()
     {
         for (int i = 0; i < PlayerKeyBindings.Count; i++)
