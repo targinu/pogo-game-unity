@@ -395,6 +395,7 @@
 "Assets/NatureStarterKit2/Standard Assets/Effects/ImageEffects/Scripts/Vortex.cs"
 "Assets/Scripts/AudioManager.cs"
 "Assets/Scripts/BotController.cs"
+"Assets/Scripts/BotSpawner.cs"
 "Assets/Scripts/BreakableBox.cs"
 "Assets/Scripts/BreakableBoxSpawner.cs"
 "Assets/Scripts/GameManager.cs"
