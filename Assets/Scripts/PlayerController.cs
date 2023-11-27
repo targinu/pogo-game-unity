@@ -25,6 +25,13 @@ public class PlayerController : MonoBehaviour
     public int PlayerIndex { get; private set; } //propriedade para acessar o índice do jogador
     private KeybindManager keybindManager; //referência ao KeybindManager
 
+    public float speedReductionMultiplier = 0.5f; //fator de redução de velocidade
+    public float speedBoostMultiplier = 1.5f; //fator de aumento de velocidade
+    private float originalMoveSpeed; //armazena a velocidade original antes dos efeitos
+    private bool isUnderPowerUp = false; //indica se o jogador está sob o efeito de um power-up
+    private float powerUpDuration = 5.0f; //duração do efeito de power-up em segundos
+    private float currentPowerUpTimer = 0.0f; //temporizador atual do efeito de power-up
+
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>(); //encontra o GameManager na cena
@@ -87,6 +94,19 @@ public class PlayerController : MonoBehaviour
                 else if (horizontalInput == 0 && verticalInput != 0)
                 {
                     Move(Vector3.forward * Mathf.Sign(verticalInput)); //move para frente ou trás
+                }
+
+
+                // Verifica se o jogador está sob o efeito de um power-up
+                if (isUnderPowerUp)
+                {
+                    currentPowerUpTimer -= Time.deltaTime;
+
+                    // Se o temporizador atingir zero, reverte o efeito de power-up
+                    if (currentPowerUpTimer <= 0.0f)
+                    {
+                        ResetPowerUpEffect();
+                    }
                 }
             }
         }
@@ -213,5 +233,80 @@ public class PlayerController : MonoBehaviour
     public Color GetPlayerColor()
     {
         return playerRenderer.material.color;
+    }
+
+    public void ApplySpeedReduction()
+    {
+        // Verifica se já está sob o efeito de SpeedReduction
+        if (!IsUnderSpeedReduction())
+        {
+            // Armazena a velocidade original
+            originalMoveSpeed = moveSpeed;
+
+            // Aplica o efeito de redução de velocidade
+            moveSpeed *= speedReductionMultiplier;
+
+            //define que o jogador está sob o efeito de um power-up
+            SetUnderPowerUp();
+            Debug.Log("Speed Reduction activated!");
+        }
+    }
+
+    public void ApplySpeedBoost()
+    {
+        // Verifica se já está sob o efeito de SpeedBoost
+        if (!IsUnderSpeedBoost())
+        {
+            // Armazena a velocidade original
+            originalMoveSpeed = moveSpeed;
+
+            // Aplica o efeito de aumento de velocidade
+            moveSpeed *= speedBoostMultiplier;
+
+            // Define que o jogador está sob o efeito de um power-up
+            SetUnderPowerUp();
+            Debug.Log("Speed Boost activated!");
+        }
+    }
+
+    public void ResetSpeed()
+    {
+        // Retorna à velocidade original
+        moveSpeed = originalMoveSpeed;
+    }
+
+    // Verifica se o jogador está sob o efeito de SpeedReduction
+    public bool IsUnderSpeedReduction()
+    {
+        return moveSpeed < originalMoveSpeed;
+    }
+
+    // Verifica se o jogador está sob o efeito de SpeedBoost
+    public bool IsUnderSpeedBoost()
+    {
+        return moveSpeed > originalMoveSpeed;
+    }
+
+    public bool IsUnderPowerUp()
+    {
+        return isUnderPowerUp;
+    }
+
+    private void SetUnderPowerUp()
+    {
+        isUnderPowerUp = true;
+        currentPowerUpTimer = powerUpDuration;
+    }
+
+    public void ResetPowerUpEffect()
+    {
+        // Retorna à velocidade original
+        moveSpeed = originalMoveSpeed;
+
+        // Reinicia as variáveis de controle de power-up
+        isUnderPowerUp = false;
+        currentPowerUpTimer = 0.0f;
+
+        Debug.Log("Power-up effect ended.");
     }
 }
